@@ -21,15 +21,95 @@ window.onload =  function(event) {
 
   // Part 1
 
+  const createNewTitle = () => {
+      const newTitle = document.getElementById("main-title");
+      newTitle.textContent = " Welcome To My Homepage";
+  }
+
+  createNewTitle()
+
   // Part 2
+
+  const newBodyColor = () => { 
+       document.body.style.backgroundColor = "blue";
+  } 
+  newBodyColor();
 
   // Part 3
 
-  // Part 4
+  const remove = () => { 
+        const removeItem = document.querySelector('li:last-child')
+        removeItem.parentElement.removeChild(removeItem)
+
+  } 
+
+  remove();
+
+  // Part 4 
+
+  const font  = () => { 
+        const changeFont = document.querySelectorAll('.special-title')
+        for (let i=0; i<changeFont.length; i++) {
+          changeFont[i].style.fontSize = '2rem'
+        }
+    } 
+
+  font ();
 
   // Part 5
 
+  const listItem = () => {
+        const list = document.querySelector("#past-races");
+        if (list.hasChildNodes()) {
+          list.removeChild(list.children[3]);
+        }
+    }
+
+    listItem();
+
   // Part 6
 
+
+const addCity = () => { 
+const newList = document.createElement("li");
+const node = document.createTextNode("Boston");
+newList.appendChild(node);
+
+const element = document.getElementById("past-races");
+element.appendChild(newList);
+
+} 
+
+addCity()
+
+
   // Part 7
+
+  const blogPost = () => {
+    //created p tag, the text node inside the p tag, and appended text in p tag 
+    const para = document.createElement('p'); 
+    const paraText = document.createTextNode('I DROVE MY CAR THROUGH BOSTON COMMONS ')
+    para.appendChild(paraText);
+
+    //created h1, the text node inside the h1 tag, and appended text in h1 tag. 
+    const heading = document.createElement('h1');
+    const headingText = document.createTextNode('Boston');
+    heading.appendChild(headingText);
+
+    //creat new div element and add both class lists  
+    const newDiv= document.createElement('div');
+    newDiv.classList.add ('blog-post' , 'purple');
+    
+
+    //append div element into main div 
+
+    const main = document.querySelector('.main');
+    main.appendChild(newDiv);
+
+    //append heading and paragraph into new div  
+    newDiv.append(heading, para);
+  }
+
+  blogPost();
+
 }
